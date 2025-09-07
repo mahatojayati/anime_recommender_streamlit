@@ -15,8 +15,9 @@ def get_recommendations(title: str, top_n: int = 10):
     tfidf = vectorizer.fit_transform(text_data)
 
     # Find the index for the input title (or closest match)
-    if title in df["name"].values:
-        idx = df.index[df["name"] == title][0]
+    matches = df.index[df["name"] == title]
+    if len(matches) > 0:
+        idx = matches[0]
     else:
         query_vec = vectorizer.transform([title])
         idx = cosine_similarity(query_vec, tfidf).flatten().argmax()
