@@ -1,8 +1,11 @@
 # Anime Recommender – Streamlit Front End
 
 A simple Streamlit app that wraps your `recommender_core.py`. If the `get_recommendations(title, top_n)`
-function is available, the app uses it; otherwise it falls back to a content-based recommender based on
+function is available, the app uses it; otherwise, it falls back to a content-based recommender based on
 the title and genre in `anime.csv`.
+
+# Prototype
+Prototype Link - https://senpaisuggests.streamlit.app/
 
 ## Run locally
 
@@ -21,7 +24,7 @@ streamlit run streamlit_app/app.py
 ## Deploy with Docker
 
 ```bash
-docker build -t anime-recommender .
+docker build -t anime-recommender.
 docker run -p 8501:8501 anime-recommender
 ```
 
